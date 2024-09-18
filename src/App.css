@@ -1,41 +1,38 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Ubuntu", sans-serif;
+}
+body {
+  background: #f8f9fb;
 }
 
 .App-header {
   height: 100vh;
-  background-image: url(/src/assets/full-length-portrait-fit-young-sportsman-running-1.jpg);
+  background-image: url(./assets/full-length-portrait-fit-young-sportsman-running-1.jpg);
   background-size: cover;
   background-position: center;
 }
-
+.navigation-bar {
+  background: #37003c;
+}
 .navigation-links {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0px 30px;
   color: white;
-  border-bottom: 1px solid rgb(0, 0, 0);
-  background-color: #f5d629;
 }
 
 .navigation-links .logo {
   text-transform: uppercase;
-  font-weight: 800;
+  font-weight: bold;
   font-size: 15px;
   letter-spacing: -1px;
-  color: rgb(0, 0, 0);
-}
-
-.burger-menu {
-  padding: 0px 10px;
-  border-left: 1px solid #000000;
 }
 
 /* Hero section */
-.hero-container {
+/* .hero-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,7 +41,7 @@
   top: 80%;
   left: 11%;
   transform: translate(-50%, -50%);
-}
+} */
 
 .hero-content-wrapper {
   position: relative;
@@ -53,7 +50,6 @@
 .hero-content-wrapper .ranking-card {
   background-color: #111111;
   color: #ffffff;
-  min-height: 390px;
   border-radius: 5px;
   padding: 20px;
 }
@@ -68,12 +64,12 @@
 
 .ranking-card {
   position: absolute;
-  bottom: 95px;
-  left: 1%;
-  min-height: 400px;
-  border-radius: 4px;
+  bottom: 60px;
+  left: 20px;
+  min-height: 500px;
+  min-width: 410px;
   /* From https://css.glass */
-  background: rgb(243, 243, 243);
+  background: rgba(255, 255, 255, 0.932);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(5px);
@@ -82,20 +78,32 @@
 }
 
 .ranking-card .card-headings {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  padding-left: 5px;
 }
 
 .ranking-card .info-chip {
-  font-size: 13px;
+  font-size: 12px;
   padding: 7px;
   color: #000000;
-  background: #f5d629;
+  background: #e4b3f5;
 }
 
 .ranking-card .title {
-  margin: 35px 0px;
   font-size: 30px;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+}
+
+.ranking-card .card-headings .btn {
+  background: #ffc700;
+  padding: 5px 20px;
+  margin-top: 5px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 }
 .social-link {
   padding: 10px;
@@ -125,4 +133,80 @@
 .material-symbols-outlined {
   font-weight: 100;
   font-size: 30px;
+}
+
+/* Global Stylesheet for subpages */
+
+.container-global {
+  margin-top: 20px;
+  padding: 0px 30px;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #000000;
+  padding: 3px 10px;
+  background: #f6e6fc;
+  border-radius: 5px;
+  box-shadow: 0px 0px 100px -86px rgba(0, 0, 0, 0.87);
+  border: 1px solid #f8f8f8;
+}
+.back-btn .material-symbols-outlined {
+  transition: 0.2s ease-in-out;
+}
+.back-btn:hover .material-symbols-outlined {
+  transform: translateX(-5px);
+}
+
+.player-top {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.player-detail-container {
+  padding: 10px;
+  background: #ffffff !important;
+  border: 1px solid #f8f8f8;
+  box-shadow: 0px 0px 100px -86px rgba(0, 0, 0, 0.1);
+}
+
+.player-detail-container .back-cover-image {
+  background-image: url(./assets/background-image.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100px;
+  position: relative;
+  margin-bottom: 55px;
+}
+
+.player-info {
+  background-color: #ffffff !important;
+  border: 1px solid #f8f8f8;
+}
+.player-detail-container .back-cover-image .profile-img {
+  position: absolute;
+  bottom: -50px;
+  left: 15px;
+}
+
+.player-detail-container .back-cover-image .profile-img img {
+  border-radius: 100%;
+  box-shadow: 0px 0px 100px -10px rgba(0, 0, 0, 0.151);
+  border: 5px solid white;
+}
+.player-detail-container .details-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.details-row h4 {
+  font-size: 20px;
+}
+
+.loader {
+  text-align: center;
 }
