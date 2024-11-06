@@ -23,33 +23,19 @@ function SocialasCard() {
             </div>
           </Link>
 
-          <a href="/">
+          <Link to="/">
             <div className="social-link">
-              <span>Twitter</span>
+              <span>Football Teams</span>
               <span className="material-symbols-outlined">chevron_right</span>
             </div>
-          </a>
+          </Link>
 
-          <a href="/">
+          <Link to="/">
             <div className="social-link">
-              <span>Instagram</span>
+              <span>Football News</span>
               <span className="material-symbols-outlined">chevron_right</span>
             </div>
-          </a>
-
-          <a href="/">
-            <div className="social-link">
-              <span>Tik Tok</span>
-              <span className="material-symbols-outlined">chevron_right</span>
-            </div>
-          </a>
-
-          <a href="/">
-            <div className="social-link">
-              <span>LinkedIn</span>
-              <span className="material-symbols-outlined">chevron_right</span>
-            </div>
-          </a>
+          </Link>
         </div>
       </div>
     </>

@@ -11,6 +11,7 @@ export default function PlayerProfile() {
   const [player, setPlayer] = useState(null); // Initialize state as null
   // Define the async function to fetch player data
   // Use useEffect to fetch data on component mount
+
   useEffect(() => {
     async function fetchPlayerData() {
       // Set the loading state
@@ -75,11 +76,11 @@ export default function PlayerProfile() {
               </div>
             </div>
           </div>
-          <h6 className="text-sm font-semibold p-2">Personal details</h6>
+          <h6 className="text-sm font-semibold p-2">Player details</h6>
           <div className="player-info my-1 py-3 rounded">
             <div className="grid grid-cols-4 gap-3 text-center m-auto">
               <div>
-                <span className="material-symbols-outlined">
+                <span className="material-symbols-outlined text-purple-700">
                   calendar_month
                 </span>
                 <h5 className="text-xs font-bold">Date of birth</h5>
@@ -88,25 +89,32 @@ export default function PlayerProfile() {
                 </p>
               </div>
               <div className="text-center border-l">
-                <span className="material-symbols-outlined">flag</span>
+                <span className="material-symbols-outlined text-purple-700">
+                  flag
+                </span>
                 <h5 className="text-xs font-bold">Country</h5>
                 <p className="text-xs">
                   {player.response[0].player.birth.country}
                 </p>
               </div>
               <div className="text-center border-l">
-                <span className="material-symbols-outlined">height</span>
+                <span className="material-symbols-outlined text-purple-700">
+                  height
+                </span>
                 <h5 className="text-xs font-bold">Height</h5>
                 <p className="text-xs">{player.response[0].player.height}</p>
               </div>
               <div className="text-center border-l">
-                <span className="material-symbols-outlined">weight</span>
+                <span className="material-symbols-outlined text-purple-700">
+                  weight
+                </span>
                 <h5 className="text-xs font-bold">weight</h5>
                 <p className="text-xs">{player.response[0].player.weight}</p>
               </div>
             </div>
           </div>
-          <h6 className="text-sm font-semibold p-2">Team</h6>
+
+          <h6 className="text-sm font-semibold p-2">Club</h6>
           <div className="my-1 py-2 px-2 shadow-xs rounded bg-white">
             <div className="flex flex-row items-center gap-2">
               <img
@@ -147,28 +155,102 @@ export default function PlayerProfile() {
           </div>
           <h6 className="text-sm font-semibold p-2">League Playing Career</h6>
           <div className="bg-white my-2 rounded shadow-xs">
-            {player && player.response && player.response[0].statistics && (
+            {player.response[0].statistics && (
               <AccordionGroup>
                 {player.response[0].statistics.map((data, index) => (
                   <Accordion key={index}>
                     <AccordionSummary>
-                      <div className="flex flex-row items-center justify-between gap-3">
-                      <h4 className="text-purple-900 uppercase font-black text-sm border-r pr-2">{data.league.season}</h4>
-                        <h4 className="text-purple-900 uppercase font-semibold text-sm">{data.league.name}</h4>
+                      <div className="flex flex-row items-center justify-between gap-3 py-3">
+                        <h4 className="text-purple-900 uppercase font-black text-sm border-r  pr-2">
+                          {data.league.season}
+                        </h4>
+                        <h4 className="text-purple-900 uppercase font-semibold text-sm">
+                          {data.league.name}
+                        </h4>
                       </div>
                     </AccordionSummary>
                     <AccordionDetails>
-                      <div className="grid grid-cols-2 gap-6 py-5">
-                        <div>
-                          <img
-                            className="shadow-sm"
-                            src={data.league.flag}
-                            alt="country flag"
-                            width={110}
-                          />
-                          <span>{data.league.country}</span>
+                      {/* Stats Table inside accordion */}
+                      <div className="grid grid-cols-1  py-5">
+                        <div className="bg-slate-50 border-l border-r border-t border-b flex flex-row justify-between items-center">
+                          <div>
+                            <h6 className="text-xs uppercase font-extrabold p-2">
+                              Club
+                            </h6>
+                          </div>
+                          <div className="flex flex-row items-center gap-2 p-2 bg-slate-50 border-l">
+                            <span className="text-xs font-medium uppercase">
+                              {data.team.name}
+                            </span>
+                            <img
+                              className="shadow-sm rounded"
+                              src={data.team.logo}
+                              alt="country flag"
+                              width={25}
+                            />
+                          </div>
                         </div>
-                        <div></div>
+
+                        <div className="bg-purple-50 border-l border-r flex flex-row justify-between items-center border-b">
+                          <div>
+                            <h6 className="text-xs uppercase font-extrabold p-2">
+                              Goals scored
+                            </h6>
+                          </div>
+                          <div className="flex flex-row items-center gap-2 p-2 bg-purple-50">
+                            <span className="text-xs font-medium uppercase">
+                              ({data.goals.total || 0})
+                            </span>
+                          </div>
+                        </div>
+                        <div className="bg-purple-50 border-l border-r flex flex-row justify-between items-center border-b">
+                          <div>
+                            <h6 className="text-xs uppercase font-extrabold p-2">
+                              Passes completed
+                            </h6>
+                          </div>
+                          <div className="flex flex-row items-center gap-2 p-2 bg-purple-50">
+                            <span className="text-xs font-medium uppercase">
+                              ({data.passes.total || 0})
+                            </span>
+                          </div>
+                        </div>
+                        <div className="bg-purple-50 border-l border-r flex flex-row justify-between items-center border-b">
+                          <div>
+                            <h6 className="text-xs uppercase font-extrabold p-2">
+                              Shots taken
+                            </h6>
+                          </div>
+                          <div className="flex flex-row items-center gap-2 p-2 bg-purple-50">
+                            <span className="text-xs font-medium uppercase">
+                              ({data.shots.total || 0})
+                            </span>
+                          </div>
+                        </div>
+                        <div className="bg-purple-50 border-l border-r flex flex-row justify-between items-center border-b">
+                          <div>
+                            <h6 className="text-xs uppercase font-extrabold p-2">
+                              Games Appeared
+                            </h6>
+                          </div>
+                          <div className="flex flex-row items-center gap-2 p-2 bg-purple-50">
+                            <span className="text-xs font-medium uppercase">
+                              ({data.games.appearences || 0})
+                            </span>
+                          </div>
+                        </div>
+                        <div className="bg-purple-50 border-l border-r flex flex-row justify-between items-center border-b">
+                          <div>
+                            <h6 className="text-xs uppercase font-extrabold p-2">
+                              Minutes Played
+                            </h6>
+                          </div>
+                          <div className="flex flex-row items-center gap-2 p-2 bg-purple-50">
+                            <span className="text-xs font-medium uppercase">
+                              ({data.games.minutes || 0})
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     </AccordionDetails>
                   </Accordion>
