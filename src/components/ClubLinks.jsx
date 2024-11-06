@@ -5,7 +5,7 @@ import Asernal from "../assets/clubs/t3.png";
 export default function ClubLinks() {
   return (
     <div className="bg-purple-50 p-2">
-      <div className="max-w-6xl mx-auto flex flex-row gap-4 items-center">
+      <div className="max-w-7xl mx-auto flex flex-row gap-4 items-center">
         <h5 className="font-bold uppercase text-xs">club sites</h5>
         <ul className="flex flex-row gap-4 items-center">
           <li>

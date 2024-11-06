@@ -9,7 +9,7 @@ export default function NavigationBar() {
     <div>
       <ClubLinks />
       <nav className="navigation-bar py-2">
-        <ul className="navigation-links max-w-6xl mx-auto pt-3">
+        <ul className="navigation-links max-w-7xl mx-auto pt-3">
           <div className="flex flex-row justify-between items-center gap-14">
             <span className="logo text-white">Worlds Most Followed</span>
             <NavigationLinks />
