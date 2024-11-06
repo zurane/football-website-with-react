@@ -1,6 +1,7 @@
 import React from "react";
 import ClubLinks from "./ClubLinks";
 import NavigationLinks from "./NavigationLinks";
+import SecondLevelNav from "./SecondLevelNav";
 import BurgerMenu from "./BurgerMenu";
 
 export default function NavigationBar() {
@@ -16,6 +17,7 @@ export default function NavigationBar() {
           <BurgerMenu />
         </ul>
       </nav>
+      <SecondLevelNav />
     </div>
   );
 }

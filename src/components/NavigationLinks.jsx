@@ -1,8 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
 export default function NavigationLinks() {
-  const activeLinkClass = "border-b-4 border-white pb-2";
+  const activeLinkClass = "border-b-4 border-white pb-3";
 
   return (
     <div className="flex flex-row justify-around text-center gap-12">
