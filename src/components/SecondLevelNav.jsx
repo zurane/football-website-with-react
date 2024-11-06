@@ -34,5 +34,4 @@ const SecondLevelNav = () => {
     </nav>
   );
 };
-
 export default SecondLevelNav;
