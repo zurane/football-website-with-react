@@ -17,7 +17,7 @@ const SecondLevelNav = () => {
     "Players",
     "Award Winners",
   ];
-  // const links = Array.from({ length: 14 }, (_, i) => `Link ${i + 1}`);
+  
   return (
     <nav className="second-level-nav bg-white flex flex-row justify-between items-center max-w-7xl mx-auto">
       {navLinks.map((link, index) => (

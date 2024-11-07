@@ -6,12 +6,12 @@ import nistelrooy from '../assets/articles/nistelrooy.webp';
 const posts = [
     {
         image: `${redDevils}`,
-        category: 'Club news',
+        category: 'Club News',
         heading: 'The Scout on why low-owned Red Devils stars can profit from new manager bounce'
     },
     {
         image: `${picture2}`,
-        category: 'Club news',
+        category: 'Featured',
         heading: 'Arsenal winger creates club record as he brings up half-century of goals with opener...'
     },
     {
