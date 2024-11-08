@@ -34,12 +34,15 @@ const CardSlider = ({ posts }) => {
   return (
     <div className="card-slider max-w-7xl mx-auto my-2">
       <Slider {...settings}>
+        {/* Check if the posts is an array */}
         {Array.isArray(posts) &&
+          // if true, map through the posts array and return the following content
           posts.map(
             (
               post,
-              index // Check if posts is an array
+              index // destructure the post object and index from the map function arguments list and return the following content
             ) => (
+              // return the following content, and give each div a unique key prop with the index value as its value.
               <div key={index} className="p-2">
                 <div className="pb-3">
                   <img
