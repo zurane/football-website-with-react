@@ -1,6 +1,7 @@
 import redDevils from '../assets/articles/redDevils.jpg';
 import picture2 from '../assets/articles/picture2.webp';
 import nistelrooy from '../assets/articles/nistelrooy.webp';
+import amori from '../assets/articles/coach-amori.jpg';
 
 
 const posts = [
@@ -18,6 +19,11 @@ const posts = [
         image: `${nistelrooy}`,
         category: 'Announcement',
         heading: 'Van Nistelrooy: Who is Manchesters interim head coach?'
+    },
+    {
+        image: `${amori}`,
+        category: 'Club News',
+        heading: 'Head coach linked with taking charge at Man Utd says update on his next move will become...'
     }
 ];
 
