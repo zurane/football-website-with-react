@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import clubBagdes from "../data/clubLinks";
+import newsData from "../data/data";
 
 export default function ClubLinks() {
   return (
@@ -8,7 +8,7 @@ export default function ClubLinks() {
       <div className="max-w-7xl mx-auto flex flex-row gap-5 items-center">
         <h5 className="font-bold uppercase text-xs">club sites</h5>
         <ul className="flex flex-row gap-4 items-center">
-          {clubBagdes.map((club, index) => (
+          {newsData.clubBagdes.map((club, index) => (
             <li key={index}>
               <Link className="text-xs font-semibold uppercase" to={club.url}>
                 <img

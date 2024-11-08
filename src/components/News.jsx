@@ -1,6 +1,6 @@
 import React from "react";
 import CardSlider from "./CardSlider";
-import posts from "../data/news"; // Ensure this import is correct
+import newsData from "../data/data"; // Ensure this import is correct
 
 const News = () => {
   return (
@@ -14,7 +14,7 @@ const News = () => {
           More News
         </a>
       </div>
-      <CardSlider posts={posts} /> {/* Pass posts as a prop */}
+      <CardSlider posts={newsData.posts} /> {/* Pass posts as a prop */}
     </div>
   );
 };

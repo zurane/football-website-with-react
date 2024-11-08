@@ -32,7 +32,7 @@ const CardSlider = ({ posts }) => {
   };
 
   return (
-    <div className="card-slider max-w-7xl mx-auto my-4">
+    <div className="card-slider max-w-7xl mx-auto my-2">
       <Slider {...settings}>
         {Array.isArray(posts) &&
           posts.map(
